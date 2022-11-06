@@ -1,0 +1,10 @@
+# 'dataset' holds the input for this script
+
+import pandas as pd
+from sklearn.cluster import Kmeans
+
+kmeans = Kmeans(n_cluster = 4, init = "k-means++", n_init +1, random_state =42)
+kmeans_fit = kmeans.fit(dataset)
+
+labels = kmeans_fit.labels_
+dataset['cluster'] = labels
